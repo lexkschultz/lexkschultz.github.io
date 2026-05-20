@@ -42,6 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+// --- PHOTO LOGIC ---
+    if (USER_CONFIG.photo) {
+        const photoContainer = document.getElementById('cfg-photo-container');
+        if (photoContainer) {
+            photoContainer.innerHTML = `<img src="${USER_CONFIG.photo}" alt="${USER_CONFIG.name}" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">`;
+        }
+    }
+
     // Fix Social Links
     const links = USER_CONFIG.links || {};
     const sLink = document.getElementById('link-scholar');
