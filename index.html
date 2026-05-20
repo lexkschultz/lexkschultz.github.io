@@ -42,16 +42,15 @@
                 </div>
                 <h1 class="hero-name" data-config="name">Your Name</h1>
                 <p class="hero-role" data-config="role_university">PhD Candidate in Computer Science, Your University</p>
-                <div class="hero-bio">
-                    <p>Exploring the frontiers of <em>machine learning</em> and <em>artificial intelligence</em>. Building intelligent systems that advance scientific discovery.</p>
+                <div class="hero-bio"><p data-config="bio">Loading bio...</p>
                 </div>
                 <div class="hero-links">
-                    <a href="#">Google Scholar</a>
-                    <span class="link-dot"></span>
-                    <a href="#">GitHub</a>
-                    <span class="link-dot"></span>
-                    <a href="#">CV</a>
-                </div>
+    			<a href="#" id="link-scholar">Google Scholar</a>
+    			<span class="link-dot"></span>
+    			<a href="#" id="link-github">GitHub</a>
+    			<span class="link-dot"></span>
+    			<a href="#" id="link-cv">CV</a>
+		</div>
                 <div class="hero-motif" aria-hidden="true">
                     <svg aria-hidden="true" viewBox="0 0 240 65" width="360" height="98" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -232,14 +231,14 @@
                     <span class="section-label-cn">联系方式</span>
                 </div>
                 <div class="section-main">
-                    <p class="contact-line">your.email@university.edu</p>
-                    <p class="contact-line">Office 123, Department of Computer Science</p>
+                    <p class="contact-line" data-config="email">Loading...</p>
+    <p class="contact-line" data-config="university">Loading...</p>
                 </div>
             </div>
         </section>
 
         <footer class="scroll-footer">
-            <p>&copy; 2025 Your Name</p>
+            <p>&copy; 2026 <span data-config="name">Lex Schultz</span></p>
         </footer>
 
     </main>

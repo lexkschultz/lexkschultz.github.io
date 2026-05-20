@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function populateSimpleFields(cfg) {
   document.querySelectorAll('[data-config]').forEach(el => {
     const key = el.dataset.config;
-    if (key === 'role_university') el.textContent = `${cfg.role} in Computer Science, ${cfg.university}`;
+    if (key === 'role_university') el.textContent = `${cfg.role} in Earth, Environmental, and Planetary Sciences, ${cfg.university}`;
     else if (cfg[key] !== undefined) el.textContent = cfg[key];
   });
   if (cfg.name) document.title = `${cfg.name} | Academic Homepage`;
