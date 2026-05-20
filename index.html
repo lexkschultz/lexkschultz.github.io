@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Homepage Templates — 11 Themes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #fff; font-family: system-ui, -apple-system, sans-serif; }
+
+        .bar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+            height: 44px;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex; align-items: center; gap: 6px; padding: 0 14px;
+        }
+        .bar-label {
+            color: rgba(255,255,255,0.35);
+            font-size: 11px; font-weight: 500;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            margin-right: 4px; white-space: nowrap;
+        }
+        .theme-btn {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.18);
+            color: rgba(255,255,255,0.55);
+            font-size: 11px; font-weight: 600;
+            padding: 3px 8px; border-radius: 4px;
+            cursor: pointer; letter-spacing: 0.03em;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+        .theme-btn:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+        .theme-btn.active {
+            background: #fff; color: #000;
+            border-color: #fff;
+        }
+
+        iframe {
+            position: fixed;
+            top: 44px; left: 0; right: 0; bottom: 0;
+            width: 100%; height: calc(100vh - 44px);
+            border: none;
+            background: #fff;
+            transition: opacity 0.15s;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <span class="bar-label">Theme</span>
+        <button class="theme-btn active" data-theme="academic">Academic</button>
+        <button class="theme-btn" data-theme="natural">Natural</button>
+        <button class="theme-btn" data-theme="editorial">Editorial</button>
+        <button class="theme-btn" data-theme="glass">Glass</button>
+        <button class="theme-btn" data-theme="swiss">Swiss</button>
+        <button class="theme-btn" data-theme="terminal">Terminal</button>
+        <button class="theme-btn" data-theme="bento">Bento</button>
+        <button class="theme-btn" data-theme="ink">Ink</button>
+        <button class="theme-btn" data-theme="newspaper">Newspaper</button>
+        <button class="theme-btn" data-theme="bauhaus">Bauhaus</button>
+        <button class="theme-btn" data-theme="dashboard">Dashboard</button>
+    </div>
+
+    <iframe id="preview" src="themes/academic/index.html" title="Theme Preview"></iframe>
+
+    <script>
+        const iframe = document.getElementById('preview');
+        const btns = document.querySelectorAll('.theme-btn');
+        const saved = localStorage.getItem('active-theme') || 'academic';
+
+        function activate(theme) {
+            btns.forEach(b => b.classList.toggle('active', b.dataset.theme === theme));
+            iframe.style.opacity = '0';
+            iframe.onload = () => { iframe.style.opacity = '1'; };
+            iframe.src = 'themes/' + theme + '/index.html';
+            localStorage.setItem('active-theme', theme);
+        }
+
+        btns.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.theme)));
+        activate(saved);
+    </script>
+</body>
+</html>
