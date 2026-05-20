@@ -1,4 +1,4 @@
-// 1. THEME & NAVIGATION LOGIC
+// 1. ORIGINAL THEME TOGGLE (With memory)
 const toggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 const saved = localStorage.getItem('ink-theme') || 'light';
@@ -12,6 +12,7 @@ if (toggle) {
     });
 }
 
+// 2. SCROLL SPY (Side-menu highlighting)
 const sections = document.querySelectorAll('section[id], header[id]');
 const tocLinks = document.querySelectorAll('.toc-link');
 const observer = new IntersectionObserver((entries) => {
@@ -25,23 +26,23 @@ const observer = new IntersectionObserver((entries) => {
 }, { rootMargin: '-20% 0px -60% 0px' });
 sections.forEach(s => observer.observe(s));
 
-// 2. DATA POPULATION LOGIC (The Brain)
+// 3. DATA POPULATION (Your Brown University info)
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof USER_CONFIG === 'undefined') return;
-    
-    // Fill Name, Bio, University
+
+    // Fill Basic Text Fields
     document.querySelectorAll('[data-config]').forEach(el => {
         const key = el.dataset.config;
         if (key === 'role_university') {
             el.textContent = `${USER_CONFIG.role}, ${USER_CONFIG.university}`;
         } else if (key === 'bio') {
-            el.innerHTML = USER_CONFIG.bio; // Allows <em> tags for "icy worlds"
-        } else if (USER_CONFIG[key] !== undefined) {
+            el.innerHTML = USER_CONFIG.bio; 
+        } else if (USER_CONFIG[key]) {
             el.textContent = USER_CONFIG[key];
         }
     });
 
-    // Fill Social Links (Scholar, GitHub, CV)
+    // Fix Social Links
     const links = USER_CONFIG.links || {};
     const sLink = document.getElementById('link-scholar');
     const gLink = document.getElementById('link-github');
@@ -50,24 +51,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (gLink && links.github) gLink.href = links.github;
     if (cLink && links.cv) cLink.href = links.cv;
 
-    // Fill Publications
-    const bibList = document.getElementById('cfg-publications');
-    if (bibList && USER_CONFIG.publications) {
-        bibList.innerHTML = USER_CONFIG.publications.map(p => `
+    // Fill Publications (Bolding your name)
+    const pubList = document.getElementById('cfg-publications');
+    if (pubList && USER_CONFIG.publications) {
+        pubList.innerHTML = USER_CONFIG.publications.map(p => `
             <li class="bib-entry">
-                <span class="bib-authors">${p.authors.replace(USER_CONFIG.name, `<strong>${USER_CONFIG.name}</strong>`)}.</span>
+                <span class="bib-authors">${p.authors.replace("Alexa Schultz", "<strong>Alexa Schultz</strong>").replace("Lex Schultz", "<strong>Lex Schultz</strong>")}.</span>
                 <span class="bib-title">"${p.title}."</span>
                 <span class="bib-venue"><em>${p.venue}</em>, ${p.year}.</span>
             </li>`).join('');
     }
 
-    // Fill Projects
-    const projCont = document.getElementById('cfg-projects');
-    if (projCont && USER_CONFIG.projects) {
-        projCont.innerHTML = USER_CONFIG.projects.map(p => `
-            <div class="project-entry">
-                <h3>${p.name}</h3>
-                <p>${p.desc}</p>
-            </div>`).join('');
+    // Fill Education Timeline
+    const expCont = document.getElementById('cfg-experience');
+    if (expCont && USER_CONFIG.education) {
+        expCont.innerHTML = `<div class="timeline">${USER_CONFIG.education.map(e => `
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-period">${e.period}</span>
+                    <h3>${e.degree}</h3>
+                    <p>${e.institution}</p>
+                </div>
+            </div>`).join('')}</div>`;
     }
 });
