@@ -45,12 +45,12 @@ const USER_CONFIG = {
   ],
 
   projects: [
-    // {
-     // name: "Project Name",
-     // desc: "Brief description of your project and its impact.",
-    //  tags: ["Python", "PyTorch"],
-     // url:  "#",
-   // },
+    {
+      name: "Project Name",
+      desc: "Brief description of your project and its impact.",
+      tags: ["Python", "PyTorch"],
+      url:  "#",
+   },
   ],
 
   news: [
