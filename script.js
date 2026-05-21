@@ -38,6 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="tags">${p.tags.map(t => `<span style="font-size:0.7rem; border:1px solid var(--accent); padding:2px 6px; border-radius:10px; margin-right:5px; color:var(--accent);">${t}</span>`).join('')}</div>
             </div>`).join('');
     }
+// news
+const newsCont = document.getElementById('cfg-news-list');
+    if (newsCont && USER_CONFIG.news) {
+        newsCont.innerHTML = USER_CONFIG.news.map(n => `
+            <li class="bib-entry" style="margin-bottom:1rem; list-style:none;">
+                <span class="bib-authors" style="background:var(--accent); color:white; padding:2px 8px; border-radius:4px; margin-right:10px; font-weight:bold; font-size:0.8rem;">${n.badge}</span>
+                <span class="bib-venue" style="font-family:monospace; margin-right:10px;">${n.date}</span>
+                <span class="bib-title" style="border:none;">${n.text}</span>
+            </li>`).join('');
+    }
 
     // Education & Experience (Timeline Style)
     const renderTimeline = (id, items) => {

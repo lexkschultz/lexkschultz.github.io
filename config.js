@@ -52,7 +52,7 @@ const USER_CONFIG = {
   projects: [
     {
       name: "Stress evolution in planetary ice shells",
-      desc: "Investigating the mechanisms of ocean-surface exchange, this project integrates viscoelastic stress modeling with controlled laboratory freezing experiments. Using a freezing sphere as a mechanically tractable analog for ocean worlds, I model how volumetric expansion and thermal contraction drive tensile failure within a solidifying shell. By systematically varying freezing rates and salinity, I identify the thresholds for fracture initiation, linking continuum-scale stress evolution to observable tectonic patterns on moons like Europa and Enceladus.",
+      desc: "This project integrates viscoelastic stress modeling with controlled laboratory freezing experiments. Using a freezing sphere as an analog for ocean worlds, I model how volumetric expansion and thermal contraction drive tensile failure within a solidifying shell. By systematically varying freezing rates and salinity, I identify the thresholds for fracture initiation, linking continuum-scale stress evolution to observable tectonic patterns on moons like Europa and Enceladus. I am currently working on incorporating my stress and fracture model into an existing magma chamber codebase",
       tags: ["MATLAB", "computational", "experimental","icy moons","geophysics","numerical modeling"],
       collaborators: "Christian Huber, Sam Birch",
     },
