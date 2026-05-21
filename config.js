@@ -31,7 +31,7 @@ const USER_CONFIG = {
       title:    "As above, not so below: Ion fractionation in planetary analog ices",
       authors:  "Jacob J Buffo, Mark G Fox-Powell, Andrii Murdza, Tara C Tomlinson, Alexa Schultz, Timothy Barton, Caroline Gurd, Angus McEwen, Natalie S Wolfenbarger, Chase J Chivers, Britney E Schmidt, Colin R Meyer",
       venue:    "Science Advances",
-      links:    { pdf: "/assets/sciadv.ady6763.pdf"},
+      links:    { pdf: "assets/sciadv.ady6763.pdf"},
       abstract: "Here, we present experimental results demonstrating that ion fractionation—the differential entrainment of ion species in forming ices—is likely a prevalent process on ocean worlds, suggesting that planetary ice shell compositions do not directly reflect their underlying ocean compositions.",
     },
     {
@@ -39,15 +39,8 @@ const USER_CONFIG = {
       title:    "Brine Evolution and Habitability in Ice Shells on Ocean Worlds: Insights from Experimental Freezing and Geochemical Modeling",
       authors:  "Alexa Schultz, Andrii Murdza, Tara Tomlinson, Jacob Buffo",
       venue:    "56th Lunar and Planetary Science Conference",
-      links:    { pdf: "/assets/2578.pdf" },
-      abstract: "we benchmark the simulated freezing of
-brines against novel experimentally derived ice sample
-solutions. We explore how the evolution of brine
-pockets within an ice shell, frozen from an underlying
-ocean, influences ice mineralogy and its ability to
-support life. Additionally, we investigate the water
-properties of ionic strength, porosity, and water
-activity, which are critical for habitability.",
+      links:    { pdf: "assets/2578.pdf" },
+      abstract: "we benchmark the simulated freezing of brines against novel experimentally derived ice sample solutions. We explore how the evolution of brine pockets within an ice shell, frozen from an underlying ocean, influences ice mineralogy and its ability to support life. Additionally, we investigate the water properties of ionic strength, porosity, and water activity, which are critical for habitability.",
     },
 	{
       year:     2024,
@@ -62,7 +55,7 @@ activity, which are critical for habitability.",
       title:    "Topographic Characterization and Evolutionary Modeling of Large Volcano-Tectonic Structures on Venus",
       authors:  "Alexa Schultz, Patrick McGovern",
       venue:    "55th Lunar and Planetary Science Conference",
-      links:    { pdf: "/assets/2204.pdf" },
+      links:    { pdf: "assets/2204.pdf" },
       abstract: "We take a quantitative approach to
 characterizing the topography of large volcano-tectonic
 structures on Venus, applying harmonic analysis to objectively
@@ -76,19 +69,19 @@ the utility of existing classification schemes.",
     {
       name: "Stress evolution in planetary ice shells",
       desc: "Investigating the mechanisms of ocean-surface exchange, this project integrates viscoelastic stress modeling with controlled laboratory freezing experiments. Using a freezing sphere as a mechanically tractable analog for ocean worlds, I model how volumetric expansion and thermal contraction drive tensile failure within a solidifying shell. By systematically varying freezing rates and salinity, I identify the thresholds for fracture initiation, linking continuum-scale stress evolution to observable tectonic patterns on moons like Europa and Enceladus.",
-      tags: ["MATLAB", "computational", "experimental","icy moons","geophysics","numerical modeling"],
+      tags: ["MATLAB", "computational", "experimental", "icy moons", "geophysics", "numerical modeling"],
       url:  "#",
    },
 {
       name: "Brine Evolution and Habitability in Ice Shells on Ocean Worlds: Insights from Experimental Freezing and Geochemical Modeling",
       desc: "The purpose of this research was to challenge the assumption that the surface chemistry of moons like Europa directly mirrors their subsurface oceans. I utilized PHREEQC and the FREZCHEM database to model how different ionic species are preferentially excluded or entrained during the freezing of planetary analog ices. This work contributed to experimental findings published in Science Advances, demonstrating that ion fractionation can cause depletions or amplifications of up to 77% relative to the parent fluid. These results are critical for interpreting data from the Europa Clipper mission, as they provide a framework for "back-calculating" true ocean compositions from ice shell measurements.",
-      tags: ["MATLAB", "computational", "experimental","icy moons","geochemical modeling","astrobiology"],
+      tags: ["MATLAB", "computational", "experimental", "icy moons", "geochemical modeling", "astrobiology"],
       url:  "#",
    },
 {
       name: "A Geochemical Model to Constrain Core-Mantle Equilibration During Large-Scale Impact-Driven Earth Accretion",
       desc: "This project aimed to resolve the "core formation paradox" by determining the extent of chemical equilibration between sinking metallic diapirs and the surrounding silicate magma ocean in the early Earth. I developed a numerical model in MATLAB that integrated partition coefficients for siderophile elements as a function of pressure, temperature, and oxygen fugacity ($fO_2$). The simulation analyzed how the degree of equilibration—impacted by the size of the impactor and the depth of the magma ocean—governs the final distribution of trace elements in the mantle, providing a more accurate timeline of Earth’s early differentiation and metal-silicate partitioning.",
-      tags: ["MATLAB", "computational", "geochemistry", "geophysics","geochemical modeling","planetary formation", "Earth", "terrestrial planets"],
+      tags: ["MATLAB", "computational", "geochemistry", "geophysics", "geochemical modeling", "planetary formation", "Earth", "terrestrial planets"],
       url:  "#",
    },
 {
@@ -100,13 +93,13 @@ the utility of existing classification schemes.",
 {
       name: "Mapping the Moho impedance contrast throughout the Cascadia subduction zone using a receiver function approach",
       desc: "The Cascadia Subduction Zone, a convergent margin located in the U.S. Pacific Northwest and southwestern Canada, is of great interest to Earth scientists, in large part due to the potential for a devastating future megathrust earthquake. The objective of this study was to use seismic imaging to detect the presence of hydrated minerals (serpentine) in the mantle wedge, which significantly influences the friction and rupture of subduction zones. I utilized the Funclab software package to process teleseismic earthquake data, generating P-to-S receiver functions that revealed sharp velocity discontinuities. By identifying areas where the Moho exhibited a negative velocity contrast—an "inverted Moho"—I mapped the spatial extent of mantle hydration, offering new insights into the fluid flux and megathrust earthquake hazards in the Pacific Northwest.",
-      tags: ["MATLAB", "computational", "Earth", "seismology","subduction zones","Cascadia", "terrestrial planets"],
+      tags: ["MATLAB", "computational", "Earth", "seismology", "subduction zones", "Cascadia", "terrestrial planets"],
       url:  "#",
    },
 {
       name: "Imaging the Crust and Upper Mantle of the Pacific Northwest Using Rayleigh Wave Phase Velocities",
       desc: "Using the Helmholtz tomography method, this project produced Rayleigh wave phase velocity maps of the Cascadia Subduction Zone across periods from 20s to 100s to resolve the region's complex lithospheric structure. I measured phase times from 294 teleseismic earthquakes recorded at 149 EarthScope stations, followed by a parameter search to constrain the depth of the Moho and shear-wave velocities. Our results identified high-velocity signatures associated with the cold subducting Juan de Fuca plate and low-velocity anomalies beneath the Cascades and high-elevation regions like the Northern Basin. These higher-resolution maps provide a more detailed framework for 3-D shear-wave models and regional seismic hazard assessments.",
-      tags: ["MATLAB", "computational", "Earth", "seismology", "GMT" "subduction zones","Cascadia" "terrestrial planets"],
+      tags: ["MATLAB", "computational", "Earth", "seismology", "GMT", "subduction zones", "Cascadia", "terrestrial planets"],
       url:  "#",
    },
   ],
