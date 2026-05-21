@@ -36,7 +36,7 @@ const USER_CONFIG = {
       title: "A Geochemical Model to Constrain Core-Mantle Equilibration During Large-Scale Impact-Driven Earth Accretion",
       authors: "Alexa Schultz",
       venue: "Yale EPS Theses",
-      links: { pdf: "/assets/schultzyale.pdf" },
+      links: { pdf: "assets/schultzyale.pdf" },
       abstract: "Here, I create a model for core accretion, using lead and tungsten as isotopic parameters to constrain degree of equilibration between the impactor core material and the fraction of the Earth’s mantle that is molten upon impact.",
     },
     {

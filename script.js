@@ -67,14 +67,22 @@ const newsCont = document.getElementById('cfg-news-list');
     renderTimeline('cfg-education', USER_CONFIG.education);
     renderTimeline('cfg-experience', USER_CONFIG.experience);
 
-    // Publications
+    // 5. PUBLICATIONS (With PDF Link Support)
     const pubList = document.getElementById('cfg-publications');
     if (pubList && USER_CONFIG.publications) {
-        pubList.innerHTML = USER_CONFIG.publications.map(p => `
-            <li class="bib-entry">
-                <span class="bib-authors">${p.authors.replace(/Alexa Schultz/g, "<strong>Alexa Schultz</strong>").replace(/Lex Schultz/g, "<strong>Lex Schultz</strong>")}.</span>
-                <span class="bib-title">"${p.title}."</span>
-                <span class="bib-venue"><em>${p.venue}</em>, ${p.year}.</span>
-            </li>`).join('');
+        pubList.innerHTML = USER_CONFIG.publications.map(p => {
+            // Create the PDF link HTML only if a PDF path is provided
+            const pdfLink = (p.links && p.links.pdf) 
+                ? `<a href="${p.links.pdf}" target="_blank" style="margin-left: 8px; color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.85rem;">[PDF]</a>` 
+                : '';
+
+            return `
+                <li class="bib-entry">
+                    <span class="bib-authors">${p.authors.replace(/Alexa Schultz/g, "<strong>Alexa Schultz</strong>").replace(/Lex Schultz/g, "<strong>Lex Schultz</strong>")}.</span>
+                    <span class="bib-title">"${p.title}."</span>
+                    <span class="bib-venue"><em>${p.venue}</em>, ${p.year}.</span>
+                    ${pdfLink}
+                </li>`;
+        }).join('');
     }
 });
